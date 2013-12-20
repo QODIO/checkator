@@ -63,7 +63,7 @@
 				'margin-bottom': $(element).css('margin-bottom'),
 				'margin-left': $(element).css('margin-left'),
 				'float': $(element).css('float'),
-				'display': $(element).css('display')
+				'display': $(element).css('display') === 'inline' ? 'inline-clock' : $(element).css('display')
 			});
 			$(element).css({
 				opacity: 0,
