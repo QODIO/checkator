@@ -5,76 +5,64 @@
  * by Ingi P. Jacobsen
  */
 
-/* source */
+/* RESET */
+input[type=radio],
+input[type=checkbox] {
+	margin-bottom: 0;
+}
+
+/* SOURCE ELEMENT (when checkator is enabled on an element) */
 .checkator_source {
 	position: relative;
 	z-index: 2;
 	display: block;
 }
 
-/* shared */
-.checkator_holder {
+/* SHARED SETTING */
+.checkator_holder { /* Holder for the new element */
 	display: inline-block;
 	position: relative;
 }
-.checkator {
+.checkator { /* New element */
 	border: 2px solid #abadb3;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 	background-color: #fff;
 	display: block;
 	position: absolute;
-	left: 0;
 	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	z-index: 1;
-	width: 100%;
-	height: 100%;
 }
-.checkator_source:focus+.checkator {
+.checkator_source:checked+.checkator:after { /* Checked element dot */
+	background-color: #7fa92c;
+	display: block;
+	content: ' ';
+	top: 20%;
+	right: 20%;
+	bottom: 20%;
+	left: 20%;
+	position: absolute;
+}
+.checkator_source:focus+.checkator { /* Focused element */
 	border: 2px solid #cc0;
 }
-.checkator_source:hover+.checkator {
+.checkator_source:hover+.checkator { /* Hovered element */
+	/* Bug: There is a bug in chrome preventing this from working correctly */
 	background-color: #def;
 	border: 2px solid #79b;
 }
 
 
-/* radio */
+/* RADIO SETTINGS */
 .checkator.radio {
 	border-radius: 50%;
 }
 .checkator.radio:after {
-	background-color: transparent;
-	display: block;
-	content: ' ';
-	top: 20%;
-	right: 20%;
-	bottom: 20%;
-	left: 20%;
-	position: absolute;
 	border-radius: 50%;
 }
-.checkator_source:checked+.checkator.radio:after {
-	background-color: #7fa92c;
-}
 
-/* checkbox */
-.checkator_holder.checkbox {
-	vertical-align: text-bottom;
-}
-.checkator.checkbox {
+/* CHECKBOX SETTINGS */
+.checkator.checkbox { /* New element */
 	border: 2px solid #abadb3;
-}
-.checkator.checkbox:after {
-	background-color: transparent;
-	display: block;
-	content: ' ';
-	top: 20%;
-	right: 20%;
-	bottom: 20%;
-	left: 20%;
-	position: absolute;
-}
-.checkator_source:checked+.checkator.checkbox:after {
-	background-color: #7fa92c;
 }
