@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Checkator Plugin</title>
+	<link rel="stylesheet" href="fm.checkator.jquery.css"/>
+	<style>
+		body {
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		#wrapper {
+			padding: 15px;
+		}
+		.radio1 {
+			width: 50px;
+			height: 50px;
+		}
+		.radio2 {
+		}
+		.checkbox1 {
+		}
+		.checkbox2 {
+			width: 25px;
+			height: 25px;
+		}
+	</style>
+	<script src="jquery-2.0.3.min.js"></script>
+	<script src="fm.checkator.jquery.js"></script>
+	<script>
+		$(function () {
+			$('.radio1, .radio2, .checkbox1, .checkbox2').checkator();
+
+
+			$('#activate_checkator1').click(function () {
+				if ($('#radio1_1').data('checkator') === undefined) {
+					$('.radio1').checkator();
+					$('#activate_checkator1').val('destroy checkator');
+				} else {
+					$('.radio1').checkator('destroy');
+					$('#activate_checkator1').val('activate checkator');
+				}
+			});
+
+			$('#activate_checkator2').click(function () {
+				if ($('#radio2_1').data('checkator') === undefined) {
+					$('.radio2').checkator();
+					$('#activate_checkator2').val('destroy checkator');
+				} else {
+					$('.radio2').checkator('destroy');
+					$('#activate_checkator2').val('activate checkator');
+				}
+			});
+
+			$('#activate_checkator3').click(function () {
+				if ($('#checkbox1_1').data('checkator') === undefined) {
+					$('.checkbox1').checkator();
+					$('#activate_checkator3').val('destroy checkator');
+				} else {
+					$('.checkbox1').checkator('destroy');
+					$('#activate_checkator3').val('activate checkator');
+				}
+			});
+
+			$('#activate_checkator4').click(function () {
+				if ($('#checkbox2_1').data('checkator') === undefined) {
+					$('.checkbox2').checkator();
+					$('#activate_checkator4').val('destroy checkator');
+				} else {
+					$('.checkbox2').checkator('destroy');
+					$('#activate_checkator4').val('activate checkator');
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<h2>Radio buttons 1</h2>
+		<input type="radio" name="radio1" class="radio1" id="radio1_1"> <label for="radio1_1">Choice 1</label>
+		<input type="radio" name="radio1" class="radio1" id="radio1_2"> <label for="radio1_2">Choice 2</label>
+		<input type="radio" name="radio1" class="radio1" id="radio1_3"> <label for="radio1_3">Choice 3</label>
+		<input type="radio" name="radio1" class="radio1" id="radio1_4"> <label for="radio1_4">Choice 4</label>
+		<input value="activate checkator" id="activate_checkator1" type="button">
+		<br>
+
+		<h2>Radio buttons 2</h2>
+		<input type="radio" name="radio2" class="radio2" id="radio2_1"> <label for="radio2_1">Choice 1</label><br>
+		<input type="radio" name="radio2" class="radio2" id="radio2_2"> <label for="radio2_2">Choice 2</label><br>
+		<input type="radio" name="radio2" class="radio2" id="radio2_3"> <label for="radio2_3">Choice 3</label><br>
+		<input type="radio" name="radio2" class="radio2" id="radio2_4"> <label for="radio2_4">Choice 4</label><br>
+		<input value="activate checkator" id="activate_checkator2" type="button"><br>
+		<br>
+
+		<h2>Checkboxes 1</h2>
+		<input type="checkbox" name="checkbox1_1" class="checkbox1" id="checkbox1_1"> <label for="checkbox1_1">Choice 1</label>
+		<input type="checkbox" name="checkbox1_2" class="checkbox1" id="checkbox1_2"> <label for="checkbox1_2">Choice 2</label>
+		<input type="checkbox" name="checkbox1_3" class="checkbox1" id="checkbox1_3"> <label for="checkbox1_3">Choice 3</label>
+		<input type="checkbox" name="checkbox1_4" class="checkbox1" id="checkbox1_4"> <label for="checkbox1_4">Choice 4</label>
+		<input value="activate checkator" id="activate_checkator3" type="button">
+		<br>
+
+		<h2>Checkboxes 2</h2>
+		<input type="checkbox" name="checkbox2_1" class="checkbox2" id="checkbox2_1"> <label for="checkbox2_1">Choice 1</label><br>
+		<input type="checkbox" name="checkbox2_2" class="checkbox2" id="checkbox2_2"> <label for="checkbox2_2">Choice 2</label><br>
+		<input type="checkbox" name="checkbox2_3" class="checkbox2" id="checkbox2_3"> <label for="checkbox2_3">Choice 3</label><br>
+		<input type="checkbox" name="checkbox2_4" class="checkbox2" id="checkbox2_4"> <label for="checkbox2_4">Choice 4</label><br>
+		<input value="activate checkator" id="activate_checkator4" type="button"><br>
+	</div>
+
+</body>
+</html>
