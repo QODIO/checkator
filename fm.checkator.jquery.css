@@ -9,6 +9,7 @@
 .checkator_source {
 	position: relative;
 	z-index: 2;
+	display: block;
 }
 
 /* shared */
@@ -26,6 +27,8 @@
 	left: 0;
 	top: 0;
 	z-index: 1;
+	width: 100%;
+	height: 100%;
 }
 .checkator_source:focus+.checkator {
 	border: 2px solid #cc0;
@@ -56,6 +59,9 @@
 }
 
 /* checkbox */
+.checkator_holder.checkbox {
+	vertical-align: text-bottom;
+}
 .checkator.checkbox {
 	border: 2px solid #abadb3;
 }

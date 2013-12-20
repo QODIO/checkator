@@ -35,6 +35,7 @@
 		var plugin = this;
 		var type = $(element).attr('type');
 		var checked = $(element)[0].checked;
+		var wrapper = null;
 		var new_element = null;
 		plugin.settings = {};
 
@@ -44,30 +45,34 @@
 		plugin.init = function () {
 			plugin.settings = $.extend({}, defaults, options);
 
-			//// ================== CREATE ELEMENTS ================== ////
-			// new element
-			$(element).wrap('<div class="' + plugin.settings.prefix + 'holder ' + type + '"></div>');
+			wrapper = document.createElement('div');
+			$(wrapper).addClass(plugin.settings.prefix + 'holder ' + type);
+			$(element).before(wrapper);
+			$(wrapper).append(element);
 			new_element = document.createElement('div');
 			if (element.id !== undefined) {
 				$(new_element).attr('id', plugin.settings.prefix + element.id);
 			}
 			$(new_element).addClass('checkator ' + type + ' ' + (checked ? 'checked ' : ''));
-			$(new_element).css({
+
+			$(wrapper).css({
 				width: $(element).outerWidth() + 'px',
 				height: $(element).outerHeight() + 'px',
 				'margin-top': $(element).css('margin-top'),
 				'margin-right': $(element).css('margin-right'),
 				'margin-bottom': $(element).css('margin-bottom'),
-				'margin-left': $(element).css('margin-left')
+				'margin-left': $(element).css('margin-left'),
+				'float': $(element).css('float'),
+				'display': $(element).css('display')
 			});
-			$(element).css({ opacity: 0 });
+			$(element).css({
+				opacity: 0,
+				margin: 0
+			});
+			
 			$(element).addClass('checkator_source');
 			$(element).after(new_element);
 
-			//// ================== BIND ELEMENTS EVENTS ================== ////
-			$(new_element).click(function (e) {
-				//$(element).click();
-			});
 		};
 
 
@@ -75,7 +80,10 @@
 		plugin.destroy = function () {
 			$(new_element).remove();
 			$.removeData(element, 'checkator');
-			$(element).css({ opacity: '' });
+			$(element).css({ 
+				opacity: '',
+				margin: '' 
+			});
 			$(element).removeClass('checkator_source');
 			$(element).unwrap();
 		};
