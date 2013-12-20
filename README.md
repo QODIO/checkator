@@ -1,6 +1,7 @@
 Checkator
 ==========
 Checkator is a jQuery-based replacement for radio and checkbox elements. It supports css styling, and affects the original radio or checkbox element directly, which is used as the data container.
+[You can see a demo here](http://opensource.faroemedia.com/checkator).
 
 
 Usage
