@@ -69,11 +69,11 @@ $('#selectBox').checkator('destroy');
 
 Browser compatibility
 ---------------------
-* IE ???
-* Chrome 8+
-* Firefox ???
-* Safari ???
-* Opera ???
+* IE 9+
+* Chrome 2+
+* Firefox 3.5+
+* Safari 4+
+* Opera 10.5+
 
 
 Copyright and license
