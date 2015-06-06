@@ -1,7 +1,7 @@
 /*
  Checkator jQuery Plugin
  A plugin for radio and checkbox elements
- version 1.0, Dec 20th, 2013
+ version 1.1, May 16th, 2015
  by Ingi P. Jacobsen
 
  The MIT License (MIT)
@@ -53,7 +53,7 @@
 			if (element.id !== undefined) {
 				$(new_element).attr('id', plugin.settings.prefix + element.id);
 			}
-			$(new_element).addClass('checkator ' + type + ' ' + (checked ? 'checked ' : ''));
+			$(new_element).addClass(plugin.settings.prefix + 'element ' + type + ' ' + (checked ? 'checked ' : ''));
 
 			$(wrapper).css({
 				width: $(element).outerWidth() + 'px',
@@ -70,7 +70,7 @@
 				margin: 0
 			});
 			
-			$(element).addClass('checkator_source');
+			$(element).addClass(plugin.settings.prefix + 'source');
 			$(element).after(new_element);
 
 		};
@@ -84,7 +84,7 @@
 				opacity: '',
 				margin: '' 
 			});
-			$(element).removeClass('checkator_source');
+			$(element).removeClass(plugin.settings.prefix + 'source');
 			$(element).unwrap();
 		};
 		
@@ -110,3 +110,7 @@
 	};
 
 }(jQuery));
+
+$(function () {
+	$('.checkator').checkator();
+});
