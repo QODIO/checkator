@@ -17,6 +17,10 @@ Usage
 ```javascript
 $('.radio_or_checkbox').checkator();
 ```
+If you don't wan't to meddle with scripting, there is an alternative to activate replacement, by using inline markup. 
+```html
+<input type="checkbox" class="checkator">
+```
 
 HTML mangling
 -----------
