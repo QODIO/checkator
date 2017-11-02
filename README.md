@@ -1,7 +1,7 @@
 Checkator
 ==========
 Checkator is a jQuery-based replacement for radio and checkbox elements. It supports css styling, and affects the original radio or checkbox element directly, which is used as the data container.
-[You can see a demo here](http://opensource.faroemedia.com/checkator).
+[You can see a demo here](http://opensource.qodio.com/checkator).
 
 
 Usage
@@ -84,7 +84,7 @@ Copyright and license
 ---------------------
 The MIT License (MIT)
 
-Copyright (c) 2013 Faroe Media
+Copyright (c) 2013 Qodio
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
