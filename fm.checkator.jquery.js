@@ -2,11 +2,11 @@
  Checkator jQuery Plugin
  A plugin for radio and checkbox elements
  version 1.1, May 16th, 2015
- by Ingi P. Jacobsen
+ by Ingi á Steinamørk
 
  The MIT License (MIT)
 
- Copyright (c) 2013 Ingi P. Jacobsen
+ Copyright (c) 2013 Ingi á Steinamørk
 
  Permission is hereby granted, free of charge, to any person obtaining a copy of
  this software and associated documentation files (the "Software"), to deal in
